@@ -1,19 +1,20 @@
 <?php
 
-namespace Reactmore\Tripay\Services\Payment;
+namespace Reactmore\Tripay\Services\Merchant;
 
 use Exception;
 use Reactmore\Tripay\Helpers\Validations\MainValidator;
 
-class Instructions extends AbstractPayment
+
+class Paymentchannel extends AbstractMerchant
 {
 
     protected function getEndpoint()
     {
-        return '/payment/instruction';
+        return '/merchant/payment-channel';
     }
 
-    protected function needValidations($bool, $payload)
+    protected function needValidations($bool, $payload = null)
     {
         if ($bool) {
             return MainValidator::validateIntructionsRequest($payload);
