@@ -6,5 +6,5 @@ namespace Reactmore\Tripay;
 interface MainInterface
 {
 
-    public function init();
+    public function initPayment();
 }
