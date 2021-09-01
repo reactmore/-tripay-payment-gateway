@@ -66,4 +66,9 @@ echo '</pre>';
 Waiting
 ```
 
+## License
+
+Please see the [LICENSE](LICENSE) included in this repository for a full copy of the MIT license, which this project is licensed under.
+
+
 
