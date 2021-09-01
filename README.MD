@@ -41,26 +41,26 @@ use Reactmore\Tripay\Main;
 
 $data = new Main();
 
-$init = $data->init()->getPayment();
+$init = $data->init()->initMerchant();
 
 // Payload Must Array
 $payload = ['code' => 'BRIVA'];
 
 echo '<pre>';
-print_r($init->getInstructions($payload));
+print_r($init->instructions()->get($payload));
 echo '</pre>';
 ```
 
-## To Do
+## Method
 
-| API  | Status |
-|---|---|
-| `PAYMENT Method` | OK |
-| `MERCHANT Method` | OK |
-| `TRANSACTIONS CLOSE` | OK |
-| `TRANSACTIONS OPEN` | Progress |
-| `CALLBACK` | Progress |
-| `PPOB` | Progress |
+| API  | Method | Endpoint | Status |
+|---|---|---|---|
+| `PAYMENT Method`| `initPayment()` | `instructions()` | OK |
+| `MERCHANT Method`|  `initMerchant()` | `paymentchannel()`, `calculator()`, `transactions` | OK |
+| `TRANSACTIONS CLOSE`|  `initTransactions()`| `transactions`, `detail` | OK |
+| `TRANSACTIONS OPEN`| `initTransactionsOpen()` | | Progress |
+| `CALLBACK`|  `InitCallback()` | | Progress |
+| `PPOB`|  `InitPPOB()` | | Progress |
 
 ## For Handle Actions 
 
