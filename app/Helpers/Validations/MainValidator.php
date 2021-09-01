@@ -20,4 +20,24 @@ class MainValidator
         ValidationHelper::validateContentType($request);
         ValidationHelper::validateContentFields($request, ['amount']);
     }
+
+    public static function validateCreateTransactionsRequest($request)
+    {
+        ValidationHelper::validateContentType($request);
+        ValidationHelper::validateContentFields($request, [
+            'method',
+            'merchant_ref',
+            'amount',
+            'customer_name',
+            'customer_email',
+            'customer_phone',
+            'order_items'
+        ]);
+    }
+
+    public static function validateDetailTransactionsRequest($request)
+    {
+        ValidationHelper::validateContentType($request);
+        ValidationHelper::validateContentFields($request, ['reference']);
+    }
 }
