@@ -1,0 +1,22 @@
+{
+    "name": "reactmore/tripay-payment-gateway",
+    "description": "Client API Tripay Unofficial",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Reactmore\\Tripay\\": "app/"
+        }
+    },
+    "require": {
+        "php": "^7.0 | ^8.0",
+        "guzzlehttp/guzzle": "^6.5 || ^7.0",
+        "vlucas/phpdotenv": "^4.2 || ^5.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "~1.3",
+        "php-parallel-lint/php-parallel-lint": "^1.3"
+    }
+}
