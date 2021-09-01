@@ -1,6 +1,7 @@
 Tripay Payment Gateway Client Library
 ===============
 [![Latest Stable Version](http://poser.pugx.org/reactmore/tripay-payment-gateway/v)](https://packagist.org/packages/reactmore/tripay-payment-gateway) [![License](http://poser.pugx.org/reactmore/tripay-payment-gateway/license)](https://packagist.org/packages/reactmore/tripay-payment-gateway) [![Total Downloads](http://poser.pugx.org/reactmore/tripay-payment-gateway/downloads)](https://packagist.org/packages/reactmore/tripay-payment-gateway)
+
 For details please visit Official [Documentation](https://payment.tripay.co.id/developer).
 
 ## Instalation
