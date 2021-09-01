@@ -4,7 +4,6 @@ namespace Reactmore\Tripay\Helpers\Validations;
 
 use Reactmore\Tripay\Exceptions\InvalidContentType;
 use Reactmore\Tripay\Exceptions\MissingArguements;
-use Reactmore\Tripay\Exceptions\ClassMissing;
 
 class ValidationHelper
 {
