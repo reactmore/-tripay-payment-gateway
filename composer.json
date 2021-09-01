@@ -1,7 +1,7 @@
 {
     "name": "reactmore/tripay-payment-gateway",
     "description": "Client API Tripay Unofficial",
-    "version": "1.0.0",
+    "version": "1.5.0",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",

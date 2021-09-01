@@ -56,8 +56,8 @@ echo '</pre>';
 | API  | Status |
 |---|---|
 | `PAYMENT Method` | OK |
-| `MERCHANT Method` | Progress |
-| `TRANSACTIONS CLOSE` | Progress |
+| `MERCHANT Method` | OK |
+| `TRANSACTIONS CLOSE` | OK |
 | `TRANSACTIONS OPEN` | Progress |
 | `CALLBACK` | Progress |
 | `PPOB` | Progress |
