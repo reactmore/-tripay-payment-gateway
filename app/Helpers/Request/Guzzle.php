@@ -14,7 +14,7 @@ class Guzzle
 
         $response = $client->request($method, $url, [
             'headers' => $headers,
-            'json' => $body,
+            'query' => $body,
             'connect_timeout' => $connectTimeout,
             'timeout' => $timeout
         ])->getBody()->getContents();

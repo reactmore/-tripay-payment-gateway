@@ -9,11 +9,6 @@ use Reactmore\Tripay\Helpers\Request\Guzzle;
 use Reactmore\Tripay\Helpers\Request\RequestFormatter;
 
 
-
-/**
- * Class AbstractWpEndpoint
- * @package Reactmore\WordpressClient\Endpoint
- */
 abstract class AbstractPayment
 {
 
@@ -43,7 +38,7 @@ abstract class AbstractPayment
             $this->needValidations($payload);
             $payload = RequestFormatter::formatArrayKeysToSnakeCase($payload);
 
-            $response = Guzzle::sendRequest($this->api_url . $this->getEndpoint() . '?' . http_build_query($payload), 'GET', $this->headers);
+            $response = Guzzle::sendRequest($this->api_url . $this->getEndpoint(), 'GET', $this->headers, $payload);
 
             $response = $response['data'];
 
