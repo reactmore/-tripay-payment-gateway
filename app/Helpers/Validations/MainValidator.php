@@ -8,4 +8,10 @@ class MainValidator
     {
         ValidationHelper::validateContentType($request);
     }
+
+    public static function validateIntructionsRequest($request)
+    {
+        ValidationHelper::validateContentType($request);
+        ValidationHelper::validateContentFields($request, ['code']);
+    }
 }
