@@ -1,4 +1,5 @@
 vendor/*
 .env
 index.php
-tests/*
+callback-tripay.json
+CallbackHandler.php

@@ -9,7 +9,7 @@ use Reactmore\Tripay\Services\Transactions\Close\InitTransactions;
 use Reactmore\Tripay\Services\Transactions\Open\InitTransactionsOpen;
 use Reactmore\Tripay\Helpers\FileHelper;
 use Reactmore\Tripay\Helpers\Validations\MainValidator;
-
+use Reactmore\Tripay\Services\Callback;
 
 class Main implements MainInterface
 {
@@ -84,5 +84,10 @@ class Main implements MainInterface
     public function initTransactionsOpen()
     {
         return new InitTransactionsOpen($this);
+    }
+
+    public function initCallback()
+    {
+        return new Callback($this);
     }
 }
