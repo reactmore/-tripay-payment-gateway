@@ -60,11 +60,23 @@ echo '</pre>';
 | `CALLBACK` | Progress |
 | `PPOB` | Progress |
 
-## Example Method 
+## For Handle Actions 
 
-```php
-Waiting
-```
+
+| CODE  | MESSAGE |
+|---|---|
+| `408` | Connection Timeout Error. Please check your internet connection and try again |
+| `400` | Message From API Check Documentation |
+| `200` | Valid |
+
+Validation Request
+Return Throw;
+| THROW  | What Is |
+|---|---|
+| `Missing arguements exception. Content fields must be complete` | Request is Valid but you forgot pass Main Argument |
+| `Field {missingFields} is missing` | You must forget Field Require From API |
+| `Content type must be array` | All request make from Array so code not pass if not in array
+
 
 ## License
 
