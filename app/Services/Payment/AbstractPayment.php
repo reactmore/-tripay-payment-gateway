@@ -34,13 +34,13 @@ abstract class AbstractPayment
 
     abstract protected function getEndpoint();
 
-    abstract protected function needValidations($bool, $payload);
+    abstract protected function needValidations($payload);
 
     public function get($payload = [])
     {
 
         try {
-            $this->needValidations(true, $payload);
+            $this->needValidations($payload);
             $payload = RequestFormatter::formatArrayKeysToSnakeCase($payload);
 
             $response = Guzzle::sendRequest($this->api_url . $this->getEndpoint() . '?' . http_build_query($payload), 'GET', $this->headers);

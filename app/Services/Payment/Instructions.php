@@ -13,12 +13,8 @@ class Instructions extends AbstractPayment
         return '/payment/instruction';
     }
 
-    protected function needValidations($bool, $payload)
+    protected function needValidations($payload)
     {
-        if ($bool) {
-            return MainValidator::validateIntructionsRequest($payload);
-        }
-
-        return;
+        return MainValidator::validateIntructionsRequest($payload);
     }
 }
