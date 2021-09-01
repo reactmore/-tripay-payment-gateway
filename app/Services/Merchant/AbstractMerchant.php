@@ -11,13 +11,13 @@ use Reactmore\Tripay\Helpers\Request\RequestFormatter;
 abstract class AbstractMerchant
 {
 
-    private $main, $api_url, $headers;
+    private $main, $validations, $api_url, $headers;
 
     public function __construct($data)
     {
         $this->main = $data;
         $this->api_url = Url::URL_API[$this->main->stage];
-
+        $this->validations = false;
         $this->headers = [
             "Authorization" => 'Bearer ' . $this->main->credential['apiKey'],
             'Content-Type' => 'application/json',
@@ -28,13 +28,15 @@ abstract class AbstractMerchant
 
     abstract protected function getEndpoint();
 
-    abstract protected function needValidations($bool, $payload = null);
+    abstract protected function needValidations($payload);
+
+
 
     public function get($payload = [])
     {
 
         try {
-            $this->needValidations(false);
+            $this->needValidations($payload);
             $payload = RequestFormatter::formatArrayKeysToSnakeCase($payload);
 
             $response = Guzzle::sendRequest($this->api_url . $this->getEndpoint() . '?' . http_build_query($payload), 'GET', $this->headers);

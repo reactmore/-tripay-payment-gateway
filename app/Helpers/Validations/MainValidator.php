@@ -14,4 +14,10 @@ class MainValidator
         ValidationHelper::validateContentType($request);
         ValidationHelper::validateContentFields($request, ['code']);
     }
+
+    public static function validateCalculatorRequest($request)
+    {
+        ValidationHelper::validateContentType($request);
+        ValidationHelper::validateContentFields($request, ['amount']);
+    }
 }

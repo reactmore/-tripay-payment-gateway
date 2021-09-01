@@ -6,16 +6,16 @@ use Exception;
 use Reactmore\Tripay\Helpers\Validations\MainValidator;
 
 
-class Paymentchannel extends AbstractMerchant
+class Calculator extends AbstractMerchant
 {
 
     protected function getEndpoint()
     {
-        return '/merchant/payment-channel';
+        return '/merchant/fee-calculator';
     }
 
     protected function needValidations($payload)
     {
-        return false;
+        return MainValidator::validateCalculatorRequest($payload);
     }
 }
