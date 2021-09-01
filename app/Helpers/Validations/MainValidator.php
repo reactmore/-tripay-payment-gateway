@@ -40,4 +40,21 @@ class MainValidator
         ValidationHelper::validateContentType($request);
         ValidationHelper::validateContentFields($request, ['reference']);
     }
+
+    public static function validateCreateOpenTransactionsRequest($request)
+    {
+        ValidationHelper::validateContentType($request);
+        ValidationHelper::validateContentFields($request, [
+            'method',
+            'merchant_ref'
+        ]);
+    }
+
+    public static function validateDetailOpenTransactionsRequest($request)
+    {
+        ValidationHelper::validateContentType($request);
+        ValidationHelper::validateContentFields($request, [
+            'uuid',
+        ]);
+    }
 }

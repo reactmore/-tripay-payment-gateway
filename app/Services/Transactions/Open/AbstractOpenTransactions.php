@@ -39,7 +39,33 @@ abstract class AbstractOpenTransactions
             $this->needValidations($payload);
             $payload = RequestFormatter::formatArrayKeysToSnakeCase($payload);
 
-            $response = Guzzle::sendRequest($this->api_url . $this->getEndpoint() . '?' . http_build_query($payload), 'GET', $this->headers);
+            $vars = array(
+                '{uuid}' =>  $payload['uuid'],
+            );
+
+            $url = $this->api_url . $this->getEndpoint();
+            $url = strtr($url, $vars);
+
+            $response = Guzzle::sendRequest($url, 'GET', $this->headers);
+
+            $response = !empty($response['data']) ? $response['data'] : null;
+
+            return ResponseFormatter::formatResponse($response);
+        } catch (Exception $e) {
+            return Guzzle::handleException($e);
+        }
+    }
+
+    public function post($payload = [])
+    {
+
+        try {
+            $this->needValidations($payload);
+            $payload = RequestFormatter::formatArrayKeysToSnakeCase($payload);
+
+            $payload['signature'] = hash_hmac('sha256', $this->main->credential['merchantCode'] .  $payload['method'] . $payload['merchant_ref'], $this->main->credential['privateKey']);
+
+            $response = Guzzle::sendRequest($this->api_url . $this->getEndpoint(), 'POST', $this->headers, $payload);
 
             $response = $response['data'];
 

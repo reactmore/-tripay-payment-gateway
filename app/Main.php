@@ -6,6 +6,7 @@ use Dotenv\Dotenv;
 use Reactmore\Tripay\Services\Payment\InitPayment;
 use Reactmore\Tripay\Services\Merchant\InitMerchant;
 use Reactmore\Tripay\Services\Transactions\Close\InitTransactions;
+use Reactmore\Tripay\Services\Transactions\Open\InitTransactionsOpen;
 use Reactmore\Tripay\Helpers\FileHelper;
 use Reactmore\Tripay\Helpers\Validations\MainValidator;
 
@@ -78,5 +79,10 @@ class Main implements MainInterface
     public function initTransactions()
     {
         return new InitTransactions($this);
+    }
+
+    public function initTransactionsOpen()
+    {
+        return new InitTransactionsOpen($this);
     }
 }
