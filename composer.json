@@ -1,9 +1,23 @@
 {
     "name": "reactmore/tripay-payment-gateway",
-    "description": "Client API Tripay Unofficial",
-    "version": "2.0.0",
     "type": "library",
+    "description": "Client API Tripay Unofficial",
+    "homepage": "https://github.com/reactmore/tripay-payment-gateway",
+    "version": "2.0.0",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Andry Setyoso",
+            "homepage": "https://github.com/reactmore"
+        }
+    ],
+    "keywords": [
+        "tripay",
+        "tripay-library",
+        "php",
+        "payment gateway",
+        "payment-library"
+    ],
     "autoload": {
         "psr-4": {
             "Reactmore\\Tripay\\": "app/"
